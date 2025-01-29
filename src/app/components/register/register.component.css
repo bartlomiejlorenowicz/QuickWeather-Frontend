@@ -1,0 +1,17 @@
+mat-card {
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 400px;
+  text-align: center;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+mat-error {
+  color: red;
+  font-size: 12px;
+  margin-top: -5px;
+}

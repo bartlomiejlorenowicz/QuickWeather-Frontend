@@ -1,0 +1,17 @@
+<mat-card>
+  <h2>Weather Search History</h2>
+
+  <div *ngIf="history.length > 0; else noHistory">
+    <mat-card *ngFor="let entry of history" class="history-entry">
+      <h3>{{ entry.city }}</h3>
+      <p>📅 Date: {{ entry.date | date: 'short' }}</p>
+      <p>🌡️ Temperature: {{ entry.weather.temperature }} °C</p>
+      <p>🌥️ Condition: {{ entry.weather.condition }}</p>
+      <img [src]="'http://openweathermap.org/img/wn/' + entry.weather.icon + '.png'" alt="Weather icon">
+    </mat-card>
+  </div>
+
+  <ng-template #noHistory>
+    <p>No search history available.</p>
+  </ng-template>
+</mat-card>

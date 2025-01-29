@@ -1,0 +1,196 @@
+/* Główne tło */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom, #e3f2fd, #bbdefb); /* Łagodny gradient */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Nagłówek */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, #3f51b5, #5c6bc0);
+  color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.dashboard-nav {
+  display: flex;
+  gap: 10px;
+}
+
+/* Kontener główny */
+.main-container {
+  flex: 1; /* Dynamiczne zajmowanie miejsca między nagłówkiem a stopką */
+  padding: 2rem 1rem; /* Wewnętrzne odstępy */
+}
+
+.dashboard-nav button {
+  color: #fff;
+  font-weight: bold;
+}
+
+button[mat-button] {
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+button[mat-button][color="primary"] {
+  background-color: #3f51b5;
+  color: white;
+}
+
+button[mat-button][color="accent"] {
+  background-color: #ff4081;
+  color: white;
+}
+
+button[mat-button][color="warn"] {
+  background-color: #f44336;
+  color: white;
+}
+
+button[mat-button]:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Kontener główny */
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Sekcja wyszukiwania pogody */
+.search-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.search-card h2 {
+  color: #3f51b5;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.search-bar {
+  width: 100%;
+}
+
+/* Wyniki wyszukiwania pogody */
+.weather-result {
+  margin: 2rem auto;
+  max-width: 800px;
+  text-align: center;
+}
+
+.weather-result mat-card {
+  padding: 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.weather-result mat-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.weather-result h3 {
+  color: #3f51b5;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.weather-result p {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Styl stopki */
+.dashboard-footer {
+  background-color: #3f51b5; /* Kolor tła stopki */
+  color: #fff; /* Kolor tekstu */
+  padding: 1rem; /* Wewnętrzny odstęp */
+  text-align: center; /* Wyśrodkowanie tekstu */
+  margin-top: auto; /* Przepychanie stopki na dół */
+  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1); /* Subtelny cień powyżej stopki */
+  font-size: 0.9rem; /* Czytelny rozmiar czcionki */
+}
+
+/* Linki w stopce */
+.dashboard-footer nav {
+  margin-top: 0.5rem;
+}
+
+.dashboard-footer nav a {
+  color: #ffeb3b; /* Jasnożółty kolor linków */
+  text-decoration: none; /* Usunięcie podkreślenia */
+  margin: 0 8px; /* Odstępy między linkami */
+  font-weight: bold; /* Pogrubienie linków */
+  transition: color 0.3s ease; /* Płynne przejście koloru */
+}
+
+.dashboard-footer nav a:hover {
+  color: #ffffff; /* Zmiana koloru na biały podczas hover */
+  text-decoration: underline; /* Podkreślenie podczas hover */
+}
+
+/* Responsywność dla stopki */
+@media (max-width: 768px) {
+  .dashboard-footer {
+    font-size: 0.8rem; /* Mniejszy rozmiar tekstu na mniejszych ekranach */
+    padding: 0.8rem; /* Mniejsze odstępy */
+  }
+
+  .dashboard-footer nav a {
+    margin: 0 5px; /* Zmniejszenie odstępów między linkami */
+  }
+}
+
+/* Zapewnienie, że zawartość strony nie jest zasłaniana przez stopkę */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ustaw minimalną wysokość na 100% widoczności */
+  margin: 0;
+}
+
+.main-container {
+  flex: 1; /* Zajmij pozostałą przestrzeń, aby wypchnąć stopkę na dół */
+  padding-bottom: 80px; /* Zapewnienie miejsca na stopkę */
+}
+
+/* Responsywność dla stopki */
+@media (max-width: 768px) {
+  .dashboard-footer {
+    font-size: 0.8rem; /* Mniejszy rozmiar tekstu na mniejszych ekranach */
+    padding: 0.8rem; /* Mniejsze odstępy */
+  }
+}
+
+

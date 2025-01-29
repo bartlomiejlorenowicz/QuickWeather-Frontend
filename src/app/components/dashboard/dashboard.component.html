@@ -1,0 +1,61 @@
+<div class="dashboard-container">
+  <!-- Główna zawartość -->
+  <main class="dashboard-main">
+    <!-- Panel sterowania -->
+    <section class="control-panel">
+      <mat-card>
+        <h2>Control Panel</h2>
+        <button mat-raised-button color="primary" routerLink="/dashboard">Dashboard</button>
+        <button mat-raised-button color="accent" routerLink="/profile">User Profile</button>
+        <button mat-raised-button color="primary" routerLink="/dashboard/history">Weather Search History</button>
+        <button mat-raised-button color="primary" routerLink="/dashboard/change-password" routerLinkActive="active">Change Password</button>
+      </mat-card>
+    </section>
+
+    <!-- Nowy kontener obejmujący wszystko po prawej stronie -->
+    <section class="right-container" *ngIf="showDefaultContent">
+      <!-- Sekcja wyszukiwania pogody -->
+      <div class="weather-section">
+        <mat-card>
+          <h2>Check Weather</h2>
+          <mat-form-field appearance="outline" class="search-bar">
+            <mat-label>Enter city</mat-label>
+            <input matInput [(ngModel)]="city" placeholder="Search city" />
+          </mat-form-field>
+          <div class="button-group">
+            <button mat-raised-button color="primary" (click)="searchBoth()">Search</button>
+          </div>
+        </mat-card>
+      </div>
+
+      <!-- Sekcja wyników i wykresu -->
+      <div class="result-and-forecast">
+        <!-- Wynik wyszukiwania pogody -->
+        <div *ngIf="weatherData" class="weather-result">
+          <mat-card>
+            <h3>Weather in {{ weatherData.name }}</h3>
+            <p>🌡️ Temperature: {{ weatherData.main.temp }} °C</p>
+            <p>🌥️ Condition: {{ weatherData.weather[0].description }}</p>
+            <p>💧 Humidity: {{ weatherData.main.humidity }}%</p>
+            <p>🌬️ Wind Speed: {{ weatherData.wind.speed }} m/s</p>
+          </mat-card>
+        </div>
+
+        <!-- Wykres prognozy pogody -->
+        <div class="forecast-chart">
+          <mat-card>
+            <h2>5-Day Weather Forecast</h2>
+            <canvas id="forecastChart"></canvas>
+          </mat-card>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dynamiczna zawartość ładowana przez router -->
+<!--    <section class="dynamic-content" *ngIf="!showDefaultContent">-->
+<!--      <router-outlet></router-outlet>-->
+<!--    </section>-->
+
+  </main>
+</div>
+

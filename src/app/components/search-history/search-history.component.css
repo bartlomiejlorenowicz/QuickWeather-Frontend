@@ -1,0 +1,8 @@
+.history-item {
+  margin-bottom: 1rem;
+}
+mat-card {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

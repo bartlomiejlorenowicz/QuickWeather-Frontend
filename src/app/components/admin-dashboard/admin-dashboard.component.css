@@ -1,0 +1,177 @@
+/* Reset i podstawowe style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f4f6f8;
+  color: #333;
+}
+
+/* Główny kontener panelu admina */
+.admin-panel {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+/* Nagłówek */
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #3f51b5, #5c6bc0);
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-item {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-item:hover {
+  color: #ffeb3b;
+}
+
+.logout-btn {
+  background: #ff5252;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.logout-btn:hover {
+  background: #e04848;
+}
+
+/* Ciało panelu */
+.admin-body {
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  background: #fff;
+}
+
+/* Pasek boczny */
+.sidebar {
+  background: #fff;
+  border-right: 1px solid #e0e0e0;
+  padding: 2rem 1rem;
+}
+
+.sidebar-menu {
+  list-style: none;
+}
+
+.menu-item {
+  margin-bottom: 1rem;
+}
+
+.menu-item a {
+  display: block;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  color: #333;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+
+.menu-item a:hover,
+.menu-item.active a {
+  background: #f0f0f0;
+}
+
+/* Główna zawartość */
+.content {
+  padding: 2rem;
+}
+
+/* Sekcja statystyk */
+.stats {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: #fafafa;
+  border-radius: 8px;
+  padding: 1.5rem;
+  flex: 1 1 200px;
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.stat-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.stat-card p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Sekcja wykresów */
+.charts {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.chart-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  flex: 1 1 300px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.chart-card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.chart-placeholder {
+  height: 200px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-size: 1.1rem;
+}
+
+/* Stopka */
+.admin-footer {
+  text-align: center;
+  background: #3f51b5;
+  color: #fff;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}

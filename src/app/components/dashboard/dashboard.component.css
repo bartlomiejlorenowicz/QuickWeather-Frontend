@@ -6,7 +6,6 @@
   padding-right: 1rem; /* Odstęp od prawej krawędzi */
 }
 
-
 .control-panel button {
   margin: 0.25rem 0; /* Mniejsze odstępy między przyciskami */
 }
@@ -68,3 +67,332 @@
 .result-and-forecast {
   width: 100%; /* Każda sekcja zajmuje całą szerokość kontenera */
 }
+
+.custom-dashboard-button {
+  width: 250px;
+  background-color: #FF5722 !important;
+}
+
+/* Kontener główny historii */
+.history-container {
+  max-width: 900px; /* Zwiększona szerokość */
+  width: 100%;      /* Opcjonalnie: zajmuje całą szerokość rodzica */
+  padding: 20px;
+  background: linear-gradient(135deg, #ffffff, #f4f4f4);
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+/* Pojedyncza karta historii */
+.history-card {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.history-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Nagłówek karty: miasto i data */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.card-header .date {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Treść karty: dane pogodowe */
+.card-body p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.card-body p span {
+  font-weight: bold;
+}
+
+/* Stopka karty: ikona */
+.card-footer {
+  margin-top: 10px;
+  text-align: right;
+}
+
+.card-footer img {
+  width: 50px;
+  height: 50px;
+}
+
+/* Kontrolki paginacji */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.pagination-controls button {
+  margin: 0 10px;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+/* Kontener danych o jakości powietrza */
+.air-quality-section {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: var(--spacing);
+}
+
+/* Karta danych o jakości powietrza */
+.air-quality-card {
+  background: linear-gradient(135deg, #ffffff, #f8f8f8);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 100%;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.air-quality-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Stylizacja dla sekcji z danymi o jakości powietrza */
+.air-quality-details {
+  margin-top: 10px;
+}
+
+.air-quality-details p {
+  margin: 0.5rem 0;
+  font-size: 14px;
+  color: #424242;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ikony */
+.air-quality-details mat-icon {
+  margin-right: 8px;
+  color: var(--primary-color);
+}
+
+/* Lewa kolumna – panel sterowania i air quality */
+.left-column {
+  grid-column: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Elementy rozciągają się na całą szerokość kolumny */
+  gap: 1.5rem;
+}
+
+/* Styl dla sekcji danych o jakości powietrza (w lewej kolumnie) */
+.air-quality-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--spacing);
+}
+
+.control-panel mat-card,
+.air-quality-section {
+  width: 100%;       /* Elementy zajmują 100% szerokości kontenera (czyli lewej kolumny) */
+  max-width: 800px;  /* Maksymalna szerokość to 800px */
+  margin: 0 auto;    /* Wyśrodkowanie poziome */
+  padding: var(--spacing);
+}
+
+/* Stylizacja karty danych o jakości powietrza – już masz zdefiniowaną klasę */
+.air-quality-card {
+  background: linear-gradient(135deg, #ffffff, #f8f8f8);
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  padding: 20px;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.air-quality-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* home.component.css */
+.map-card {
+  width: 450px;      /* przykładowa szerokość */
+  margin: 20px auto; /* centrowanie i odstępy */
+  padding: 10px;
+}
+.nav-card {
+  background-color: #ffffff;
+  color: #333;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+}
+
+.nav-card h2 {
+  font-size: 1.75rem;
+  color: #1976d2;             /* Standardowy niebieski akcent */
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e3f2fd;  /* Jasny niebieski pasek pod nagłówkiem */
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+mat-nav-list {
+  padding: 0;
+  margin: 0;
+}
+
+mat-nav-list a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #424242;             /* Ciemnoszary tekst */
+  padding: 10px 15px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1.1rem;
+}
+
+mat-nav-list a mat-icon {
+  margin-right: 8px;
+}
+
+mat-nav-list a:hover,
+mat-nav-list a.active {
+  background-color: #e3f2fd;  /* Jasnoniebieskie tło */
+  color: #1976d2;            /* Standardowy niebieski */
+}
+
+.delete-link {
+  background-color: #ffebee;  /* bardzo jasny czerwony */
+  color: #d32f2f;             /* standardowy czerwony */
+}
+
+.delete-link:hover {
+  background-color: #ffcdd2;
+}
+
+/* PANEL */
+.nav-card {
+  background-color: #ffffff;
+  color: #333;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-bottom: 1.5rem;
+}
+
+.nav-card h2 {
+  font-size: 1.75rem;
+  color: #1976d2;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #e3f2fd;
+  padding-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.nav-toggle-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+mat-button-toggle {
+  flex: 1;
+  margin: 0 4px;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  text-transform: none;
+}
+
+/* Styl dla aktywnego toggle */
+mat-button-toggle.active,
+mat-button-toggle.mat-button-toggle-checked {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+/* Styl dla przycisku usuwania konta */
+mat-button-toggle[value="delete"] {
+  background-color: #ffebee;
+  color: #d32f2f;
+}
+
+mat-button-toggle[value="delete"].mat-button-toggle-checked,
+mat-button-toggle[value="delete"]:hover {
+  background-color: #ffcdd2;
+}
+
+/* color */
+
+.nav-toggle-group .mat-button-toggle {
+  background-color: #3f51b5 !important;
+  color: #ffeb3b !important;
+  border: none;
+}
+
+.nav-toggle-group .mat-button-toggle:hover,
+.nav-toggle-group .mat-button-toggle.mat-button-toggle-checked {
+  background-color: #5c6bc0 !important;
+  color: #ffeb3b !important;
+}
+
+.back-dashboard-btn {
+  background-color: #3f51b5 !important;
+  color: #ffeb3b !important;
+  border: none;
+  text-transform: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.back-dashboard-btn:hover {
+  background-color: #5c6bc0 !important;
+  color: #ffeb3b !important;
+}
+
+.flag {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+
+

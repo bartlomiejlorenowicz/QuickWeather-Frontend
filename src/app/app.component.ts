@@ -29,8 +29,8 @@ export class AppComponent implements OnInit {
   city: string = '';
   weatherData: any;
   isLoggedIn: boolean = false;
-  showMainHeader: boolean = true; // Kontroluje widoczność głównego headera
-  showWeatherSearch: boolean = true; // Kontroluje widoczność sekcji wyszukiwania pogody
+  showMainHeader: boolean = true;
+  showWeatherSearch: boolean = true;
   isDashboardRoute: boolean = false;
 
   constructor(private authService: AuthService,
@@ -77,38 +77,18 @@ export class AppComponent implements OnInit {
 
   updateLoginStatus(): void {
     this.isLoggedIn = this.authService.isLoggedIn();
-    this.cdr.detectChanges(); // Wymuszenie odświeżenia widoku
+    console.log('Login status updated in AppComponent:', this.isLoggedIn);
+    this.cdr.detectChanges();
   }
+
 
   logout(): void {
     this.authService.logout();
     this.router.navigate(['/']);
   }
 
-  searchWeather(): void {
-    if (!this.city.trim()) {
-      alert('Please enter a city name.');
-      return;
-    }
-
-    const backendUrl = `http://localhost:8080/api/weather/city?city=${this.city}`;
-
-    this.http.get<any>(backendUrl).subscribe({ // Określenie typu zwracanego przez HTTP
-      next: (data: any) => { // Typ dla "data"
-        console.log('Response from backend:', data);
-        this.weatherData = data;
-      },
-      error: (err: HttpErrorResponse) => {
-        if (err.status === 404) {
-          alert('City not found. Please try another one.');
-        } else if (err.status === 500) {
-          alert('Server error. Please try again later.');
-        } else {
-          alert('An unexpected error occurred. Please try again.');
-        }
-        console.error('Error fetching weather data:', err);
-      },
-    });
+  isAdminRoute(): boolean {
+    return this.router.url.startsWith('/admin');
   }
 
 }

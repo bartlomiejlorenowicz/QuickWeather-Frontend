@@ -1,26 +1,81 @@
-<!--<div class="container">-->
 
-<!--  &lt;!&ndash; Sekcja wyszukiwania pogody &ndash;&gt;-->
-<!--  <mat-card class="search-card">-->
-<!--    <h2>Check Weather in Your City</h2>-->
-<!--    <mat-form-field appearance="outline" class="search-bar">-->
-<!--      <mat-label>Enter city</mat-label>-->
-<!--      <input matInput [(ngModel)]="city" />-->
-<!--    </mat-form-field>-->
-<!--    <div class="button-group">-->
-<!--      <button mat-raised-button color="primary" (click)="searchWeather()">Search</button>-->
-<!--    </div>-->
-<!--  </mat-card>-->
+<main class="main-container">
+  <!-- Sekcja wyboru typu wyszukiwania -->
+  <section class="search-type-section">
+    <mat-card class="search-card">
+      <h2 class="card-title">Select Search Type</h2>
+      <div class="button-group">
+        <button mat-raised-button color="primary" (click)="searchType='city'">By City</button>
+        <!-- <button mat-raised-button color="primary" (click)="searchType='zipcode'">By Zip Code</button> -->
+        <button mat-raised-button color="primary" (click)="searchType='coordinates'">By Coordinates</button>
+      </div>
+    </mat-card>
+  </section>
 
-<!--  &lt;!&ndash; Wyświetlanie wyników pogody &ndash;&gt;-->
-<!--  <div *ngIf="weatherData" class="weather-result">-->
-<!--    <mat-card>-->
-<!--      <div class="weather-header">-->
-<!--        <h2>{{ weatherData.name }}</h2>-->
-<!--        <i [class]="'weather-icon wi wi-' + getWeatherIcon(weatherData.weather[0].icon)"></i>-->
-<!--      </div>-->
-<!--      <p class="temperature">🌡️ Temperature: {{ weatherData.main.temp }} °C</p>-->
-<!--      <p class="condition">🌥️ Condition: {{ weatherData.weather[0].description }}</p>-->
-<!--    </mat-card>-->
-<!--  </div>-->
-<!--</div>-->
+  <!-- Sekcja wyszukiwania – zawartość zależna od wybranego typu -->
+  <section class="search-section">
+    <!-- Wyszukiwanie po mieście -->
+    <mat-card class="search-card" *ngIf="searchType==='city'">
+      <h2 class="card-title">Search Weather by City</h2>
+      <mat-form-field appearance="outline" class="search-bar">
+        <mat-label>City</mat-label>
+        <input matInput [(ngModel)]="city" placeholder="Enter city name" />
+      </mat-form-field>
+      <div class="button-group">
+        <button mat-raised-button color="primary" (click)="searchBoth()">Search</button>
+      </div>
+    </mat-card>
+
+    <!-- Wyszukiwanie po współrzędnych -->
+    <mat-card class="search-card" *ngIf="searchType==='coordinates'">
+      <h2 class="card-title">Search Weather by Coordinates</h2>
+      <mat-form-field appearance="outline" class="search-bar">
+        <mat-label>Latitude</mat-label>
+        <input matInput [(ngModel)]="latitude" placeholder="Enter latitude" />
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="search-bar">
+        <mat-label>Longitude</mat-label>
+        <input matInput [(ngModel)]="longitude" placeholder="Enter longitude" />
+      </mat-form-field>
+      <div class="button-group">
+        <button mat-raised-button color="primary" (click)="searchByCoordinates()">Search by Coordinates</button>
+      </div>
+    </mat-card>
+  </section>
+
+  <!-- Sekcja wyników pogodowych -->
+  <div class="top-row">
+  <section class="weather-section" *ngIf="weatherData">
+    <mat-card class="weather-card">
+      <h3 class="result-title">Weather in {{ weatherData.name }}</h3>
+      <p>Country: <span class="flag">{{ weatherData.sys?.country | countryFlag }}</span></p>
+      <p>🌡️ Temperature: {{ weatherData.main.temp }} °C</p>
+      <p>🌥️ Condition: {{ weatherData.weather[0].description }}</p>
+      <p>💧 Humidity: {{ weatherData.main.humidity }}%</p>
+      <p>📈 Pressure: {{ weatherData.main.pressure }} hPa</p>
+      <p>👁️ Visibility: {{ weatherData.visibility }} m</p>
+      <p>💨 Wind Speed: {{ weatherData.wind.speed }} m/s</p>
+      <p>🧭 Wind Direction: {{ weatherData.wind.deg }}°</p>
+    </mat-card>
+  </section>
+
+  <!-- Sekcja danych o jakości powietrza -->
+  <section class="air-quality-section" *ngIf="airQualityData">
+    <mat-card class="air-quality-card">
+      <app-air-quality [airQualityData]="airQualityData" [city]="city"></app-air-quality>
+    </mat-card>
+  </section>
+  </div>
+
+  <!-- Sekcja prognozy -->
+  <section class="forecast-section" *ngIf="forecastData && forecastData.length">
+    <mat-card class="forecast-title-card">
+      <h2>5-Day Forecast</h2>
+    </mat-card>
+    <mat-card class="chart-container">
+      <canvas id="forecastChart"></canvas>
+    </mat-card>
+  </section>
+
+
+</main>

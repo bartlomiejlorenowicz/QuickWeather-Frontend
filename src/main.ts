@@ -2,7 +2,7 @@ import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
 import { provideRouter } from '@angular/router';
 import { appRoutes } from './app/app.routes';
-import {provideHttpClient, HttpClientModule, HTTP_INTERCEPTORS, withFetch} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule, provideHttpClient, withFetch} from '@angular/common/http';
 import { importProvidersFrom } from '@angular/core';
 import {AuthInterceptor} from './app/auth.interceptor';
 import {provideAnimations} from '@angular/platform-browser/animations';

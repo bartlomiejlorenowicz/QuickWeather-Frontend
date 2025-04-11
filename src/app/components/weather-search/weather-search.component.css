@@ -1,0 +1,85 @@
+/* Definicje zmiennych CSS */
+:root {
+  --primary-color: #3f51b5;
+  --background-color: #f4f6f8;
+  --card-bg: #ffffff;
+  --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+  --spacing: 16px;
+}
+
+/* Styl głównego kontenera */
+.main-container {
+  background: var(--background-color);
+  padding: var(--spacing);
+}
+
+/* Kontener sekcji – wyśrodkowanie zawartości */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--spacing);
+}
+
+/* Karta wyszukiwania */
+.search-card {
+  background-color: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  border-radius: var(--border-radius);
+  padding: var(--spacing);
+  margin-bottom: var(--spacing);
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing);
+}
+
+/* Pasek wyszukiwania */
+.search-bar {
+  width: 100%;
+  margin-bottom: var(--spacing);
+}
+
+/* Grupa przycisków – wyśrodkowanie */
+.button-group {
+  text-align: center;
+}
+
+/* Wyniki wyszukiwania */
+.weather-result {
+  margin-top: var(--spacing);
+}
+
+/* Karta z wynikami */
+.result-card {
+  background-color: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  border-radius: var(--border-radius);
+  padding: var(--spacing);
+  margin-bottom: var(--spacing);
+  text-align: center;
+}
+
+.result-title {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+  margin-bottom: var(--spacing);
+}
+
+/* Karta wykresu */
+.chart-card {
+  background-color: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  border-radius: var(--border-radius);
+  padding: var(--spacing);
+}
+
+/* Kontener wykresu */
+.chart-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}

@@ -1,0 +1,53 @@
+.air-quality-card {
+  background: var(--card-custom-bg) !important;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 500px;
+  text-align: center;
+  /*border: 1px solid #e0e0e0;*/
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.air-quality-card:hover {
+  transform: translateY(-5px);
+}
+
+.air-quality-card h3 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: black;
+}
+
+.air-quality-details p {
+  margin: 0.5rem 0;
+  font-size: 14px;
+  color: black;
+  display: flex;
+  align-items: center;
+}
+
+.air-quality-details mat-icon {
+  margin-right: 0.5rem;
+  color: green;
+}
+
+::ng-deep app-air-quality mat-card,
+::ng-deep app-air-quality mat-card-content {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.weather-card p {
+  background-color: black;
+}
+
+.weather-card p,
+.air-quality-card p {
+  background: transparent !important;
+}

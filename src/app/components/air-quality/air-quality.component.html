@@ -1,0 +1,73 @@
+<div class="air-quality-card">
+  <h3>Air Quality in {{ capitalizeCity(city) }}</h3>
+  <div *ngIf="airQualityData?.list?.length; else noData">
+    <div class="air-quality-details">
+      <!-- AQI -->
+      <p>
+        <mat-icon
+          matTooltip="Air Quality Index (AQI): 1 = Very Good, 2 = Good, 3 = Moderate, 4 = Poor, 5 = Very Poor"
+          aria-label="AQI">assessment</mat-icon>
+        <strong>AQI: </strong> {{ airQualityData.list[0].main.aqi }}
+      </p>
+      <!-- CO -->
+      <p>
+        <mat-icon
+          matTooltip="CO (Carbon Monoxide) – Norm: < 10 000 μg/m³"
+          aria-label="CO">whatshot</mat-icon>
+        <strong>CO: </strong> {{ airQualityData.list[0].components.co }}
+      </p>
+      <!-- NO -->
+      <p>
+        <mat-icon
+          matTooltip="NO (Nitric Oxide) – Typically very low"
+          aria-label="NO">filter_1</mat-icon>
+        <strong>NO: </strong> {{ airQualityData.list[0].components.no }}
+      </p>
+      <!-- NO2 -->
+      <p>
+        <mat-icon
+          matTooltip="NO₂ (Nitrogen Dioxide) – Norm: Annual < 40 μg/m³, 1h < 200 μg/m³"
+          aria-label="NO2">filter_2</mat-icon>
+        <strong>NO2: </strong> {{ airQualityData.list[0].components.no2 }}
+      </p>
+      <!-- O3 -->
+      <p>
+        <mat-icon
+          matTooltip="O₃ (Ozone) – Norm: 8h average < 100 μg/m³"
+          aria-label="O3">cloud</mat-icon>
+        <strong>O3: </strong> {{ airQualityData.list[0].components.o3 }}
+      </p>
+      <!-- SO2 -->
+      <p>
+        <mat-icon
+          matTooltip="SO₂ (Sulfur Dioxide) – Norm: 24h average < 20 μg/m³"
+          aria-label="SO2">opacity</mat-icon>
+        <strong>SO2: </strong> {{ airQualityData.list[0].components.so2 }}
+      </p>
+      <!-- PM2.5 -->
+      <p>
+        <mat-icon
+          matTooltip="PM2.5 (Fine Particulates) – Norm: Annual < 10 μg/m³, 24h < 25 μg/m³"
+          aria-label="PM2.5">grain</mat-icon>
+        <strong>PM2.5: </strong> {{ airQualityData.list[0].components.pm2_5 }}
+      </p>
+      <!-- PM10 -->
+      <p>
+        <mat-icon
+          matTooltip="PM10 (Coarse Particulates) – Norm: ~20-50 μg/m³"
+          aria-label="PM10">blur_on</mat-icon>
+        <strong>PM10: </strong> {{ airQualityData.list[0].components.pm10 }}
+      </p>
+      <!-- NH3 -->
+      <p>
+        <mat-icon
+          matTooltip="NH₃ (Ammonia) – Typically very low"
+          aria-label="NH3">eco</mat-icon>
+        <strong>NH3: </strong> {{ airQualityData.list[0].components.nh3 }}
+      </p>
+    </div>
+  </div>
+  <ng-template #noData>
+    <p>No air quality data available.</p>
+  </ng-template>
+</div>

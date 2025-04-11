@@ -1,0 +1,190 @@
+/*!* Stylizacja kontenera panelu admina *!*/
+/*.admin-panel {*/
+/*  display: flex;*/
+/*  height: 100vh;*/
+/*  background-color: #f4f7f9;*/
+/*  font-family: 'Roboto', sans-serif;*/
+/*}*/
+
+/*!* Pasek boczny *!*/
+/*.sidebar {*/
+/*  width: 250px;*/
+/*  background-color: #2f4050;*/
+/*  color: #fff;*/
+/*  padding: 20px;*/
+/*  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);*/
+/*}*/
+
+/*!* Lista menu *!*/
+/*.sidebar-menu {*/
+/*  list-style: none;*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*}*/
+
+/*!* Pojedynczy element menu *!*/
+/*.sidebar-menu .menu-item {*/
+/*  margin-bottom: 15px;*/
+/*}*/
+
+/*!* Linki w menu *!*/
+/*.sidebar-menu .menu-item a {*/
+/*  display: block;*/
+/*  text-decoration: none;*/
+/*  color: #b8c7ce;*/
+/*  padding: 10px 15px;*/
+/*  border-radius: 4px;*/
+/*  transition: background-color 0.3s ease, color 0.3s ease;*/
+/*}*/
+
+/*!* Efekt po najechaniu kursorem lub aktywny link *!*/
+/*.sidebar-menu .menu-item a:hover,*/
+/*.sidebar-menu .menu-item a.active {*/
+/*  background-color: #1ab394;*/
+/*  color: #fff;*/
+/*}*/
+/* Ogólny kontener dla panelu admina */
+.admin-panel {
+  display: flex;
+  min-height: 100vh;         /* Wysokość na całe okno przeglądarki */
+  background-color: #f8f9fa; /* Jasne tło w głównym obszarze */
+}
+
+/* Górny pasek nawigacyjny (jeśli masz go w osobnym komponencie) */
+.top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #007bff; /* Kolor główny (niebieski) */
+  color: #ffffff;
+  padding: 1rem 2rem;
+}
+
+/* Nazwa/brand w górnym pasku */
+.top-nav .brand {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+/* Przycisk wylogowania w górnym pasku */
+.top-nav .logout-btn {
+  color: #ffffff;
+  text-decoration: none;
+  background-color: #dc3545; /* Czerwony */
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.top-nav .logout-btn:hover {
+  background-color: #c82333;
+}
+
+/* Panel boczny (sidebar) */
+.sidebar {
+  width: 220px;
+  background-color: #343a40; /* Ciemne tło */
+  color: #ffffff;
+  padding: 1rem;
+}
+
+/* Lista linków w panelu bocznym */
+.sidebar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Pojedynczy element menu w sidebarze */
+.sidebar-menu .menu-item {
+  margin-bottom: 0.5rem;
+}
+
+/* Linki w menu (routerLink) */
+.sidebar-menu .menu-item a {
+  display: block;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* Hover na link w menu */
+.sidebar-menu .menu-item a:hover {
+  background-color: #495057;
+}
+
+/* Link aktywny (routerLinkActive) */
+.sidebar-menu .menu-item a.active {
+  background-color: #007bff;
+}
+
+/* Główna sekcja treści */
+.content {
+  flex: 1;               /* Wypełnia pozostałą przestrzeń */
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+}
+
+/* Przykładowe style tabel (User Management) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+table thead {
+  background-color: #f1f3f5;
+}
+
+table th, table td {
+  text-align: left;
+  padding: 0.75rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+/* Przyciski w tabeli (np. Disable) */
+button {
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  margin-right: 0.25rem;
+}
+
+button.disable {
+  background-color: #6c757d;
+  color: #ffffff;
+}
+
+button.disable:hover {
+  background-color: #5a6268;
+}
+
+button.edit {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+button.edit:hover {
+  background-color: #0069d9;
+}
+
+/* Styl paginacji */
+.pagination {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.pagination button {
+  background-color: #007bff;
+  color: #ffffff;
+}
+
+.pagination button:hover {
+  background-color: #0069d9;
+}

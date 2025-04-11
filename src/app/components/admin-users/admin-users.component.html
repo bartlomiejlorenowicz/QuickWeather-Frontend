@@ -1,0 +1,55 @@
+<div class="admin-users">
+  <h2>User Management</h2>
+  <p *ngIf="errorMessage">{{ errorMessage }}</p>
+
+  <!-- Pole wyszukiwania -->
+  <div class="search-bar">
+    <input
+      type="text"
+      placeholder="Search by email"
+      [(ngModel)]="searchEmail"
+    />
+    <button (click)="loadUsers()">Search</button>
+  </div>
+
+  <table *ngIf="users?.length">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Status</th>
+      <th>Action</th>
+<!--      <th>Unblock</th>-->
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.id }}</td>
+      <td>{{ user.firstName }}</td>
+      <td>{{ user.lastName }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.enabled ? 'Active' : 'Inactive' }}</td>
+      <td>
+        <button (click)="toggleStatus(user)"
+                [ngClass]="{'disabled-button': !user.enabled}">
+          {{ user.enabled ? 'Disable' : 'Enable' }}
+        </button>
+      </td>
+<!--      <td>-->
+<!--        <button *ngIf="!user.enabled && isUnlockable(user)" (click)="unblockUser(user)">-->
+<!--          Unblock-->
+<!--        </button>-->
+<!--      </td>-->
+
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="pagination-controls">
+    <button (click)="previousPage()" [disabled]="page === 0">Previous</button>
+    <span>Page {{ page + 1 }}</span>
+    <button (click)="nextPage()">Next</button>
+  </div>
+</div>

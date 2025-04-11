@@ -1,0 +1,87 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* Stylizacja formularza wyszukiwania */
+.search-form {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.search-form .form-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.search-form input[type="text"],
+.search-form input[type="date"] {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.search-btn {
+  background-color: #1976d2;  /* Niebieskie tło, pasujące do header/stopki */
+  color: #ffeb3b;            /* Żółty tekst */
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: #1565c0;
+}
+
+/* Stylizacja tabeli wyników */
+.results-table table {
+  border-collapse: collapse;
+  width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.results-table th,
+.results-table td {
+  border: 1px solid #ccc;
+  padding: 12px 8px;
+  text-align: left;
+}
+
+.results-table th {
+  background-color: #f2f2f2;
+  font-weight: 600;
+}
+
+/* Stylizacja komunikatu, gdy brak wyników */
+.no-results {
+  background: #fff;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  color: #777;
+}
+

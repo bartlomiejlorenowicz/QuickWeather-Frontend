@@ -1,0 +1,27 @@
+<div class="admin-panel">
+  <!-- Pasek boczny -->
+  <aside class="sidebar">
+    <ul class="sidebar-menu">
+      <li class="menu-item">
+        <a routerLink="/admin" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Overview</a>
+      </li>
+      <li class="menu-item">
+        <a routerLink="/admin/users" routerLinkActive="active">User Management</a>
+      </li>
+      <li class="menu-item">
+        <a routerLink="/admin/reports" routerLinkActive="active">User Activity</a>
+      </li>
+      <li class="menu-item">
+        <a routerLink="/admin/change-password" routerLinkActive="active">Change Password</a>
+      </li>
+      <li class="menu-item">
+        <a routerLink="/admin/logs" routerLinkActive="active">System Logs</a>
+      </li>
+    </ul>
+  </aside>
+
+  <main class="content">
+    <router-outlet></router-outlet>
+  </main>
+
+</div>

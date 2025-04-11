@@ -1,0 +1,39 @@
+<form class="search-form" (ngSubmit)="onSearch()">
+  <div class="form-row">
+    <input type="text" placeholder="User ID" [(ngModel)]="searchParams.userId" name="userId">
+    <input type="text" placeholder="Email" [(ngModel)]="searchParams.email" name="email">
+  </div>
+  <div class="form-row">
+    <input type="text" placeholder="City" [(ngModel)]="searchParams.city" name="city">
+    <input type="date" placeholder="Start Date" [(ngModel)]="searchParams.startDate" name="startDate">
+    <input type="date" placeholder="End Date" [(ngModel)]="searchParams.endDate" name="endDate">
+  </div>
+  <button type="submit" class="search-btn">Search</button>
+</form>
+
+<div *ngIf="results && results.length" class="results-table">
+  <table>
+    <thead>
+    <tr>
+      <th>User ID</th>
+      <th>Email</th>
+      <th>City</th>
+      <th>Date</th>
+      <th>Activity</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let log of results">
+      <td>{{ log.userId }}</td>
+      <td>{{ log.email }}</td>
+      <td>{{ log.city }}</td>
+      <td>{{ log.timestamp | date:'short' }}</td>
+      <td>{{ log.activity }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="results && !results.length" class="no-results">
+  <p>No results matching your search criteria.</p>
+</div>
